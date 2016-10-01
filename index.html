@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CODERHOUSE N2 - CLASE 8</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <!--
+    v1:
+    El blog debera tener la posibilidad de generar articulos
+    Titulo, descripcion, imagen, categoria
+    Una vez completado agregarlo al principio del listado de articulos
+    Debe existir la posibilidad de cambiar el layout de listado a grilla
+    v2:
+    Listado de favoritos,
+    Cada articulo debera tener un boton para marcarlo como favorito,
+    Al costado del listado de articulos a medida que se marquen como favoritos deberan ir aparenciendo los titulos de los articulos
+    v3:
+    Eliminar los favoritos,
+    cada item de favorito debera tener una "x" para poder ir borrando el favorito
+    v4:
+    Persistir los articulos y favoritos en LocalStorage
+    -->
+
+    <!--
+    v1:
+    Al agregar un articulo se debera animarse con fadeIn, animate o slideDown
+    Al hacer hover sobre un articulo el resto de los articulos debera ponerse en opacity 0.5
+    v2:
+    Sumar a la lista de articulos categorias mediante un "select"
+    Al cambiar de categoria se deberan ocultar aquellos que correspondan mediante una animacion y si estan ocultos debera aparecen con una animacion tambien.
+    v3:
+    El listado de favoritos deberan ir apareciendo con un fadeIn y si se eliminan con un fadeOut
+    -->
+
+    <!--
+    v4: Refactorizar el codigo generado para que sea 100% Programacion funcional, desde las iteraciones hasta la forma en la que se interactura con el DOM
+    Aplicar un menu con filtros
+    Extender el objeto articulo para que cada uno tenga una categoria distintas
+    -->
+
+    <!--
+    Hacer un menu que contenga otras secciones en otros HTMLs
+    Al hacer click en cada sesccion debera cargar cada una de las secciones ejecutando su propio script
+    Sacar todos los articlos del DOM, pasarlos a objetos y tenerlo en un json
+    -->
+    
+
+    <div class="container">
+      <div class="row formArticle">
+        <div class="col-md-8 bordered">
+          <section>
+            <h2>Cargue el articulo</h2>
+            <div class="form-group">
+              <input id="articleName" type="text" class="form-control" value="" placeholder="Indique el título del artículo">
+            </div>
+            <div class="form-group">
+              <input id="articleDescription" type="text" class="form-control" value="" placeholder="Indique la descripción del artículo">
+            </div>
+            <div class="form-group">
+              <input id="articleImage" type="text" class="form-control" name="image" value="" placeholder="URL de la imagen a utilizar">
+            </div>
+            <select id="articleCategory" class="form-control" name="productCategory">
+              <option value="hogar">Hogar</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="humor">Humor</option>
+            </select>
+            <section class="articleMenu">
+              <button id="btnAddFirst" type="submit" class="btn btn-primary" name="button">Agregar al Principio</button>
+              <button id="btnAddLast" type="submit" class="btn btn-danger" name="button">Agregar al Final</button>
+              <button id="btnGrid" type="submit" class="btn btn-warning" name="button">Grilla</button>
+              <button id="btnList" type="submit" class="btn btn-info" name="button">Lista</button>
+              <button id="btnRemove" type="submit" class="btn btn-default" name="button">Limpiar Lista</button>
+            </section>
+          </section>
+          <section class="articles">
+              <ul class="list-group">
+
+              </ul>
+          </section>
+        </div>
+
+        <div class="col-md-4">
+          <h2>Favoritos</h2>
+          <ul class="favoriteArticle">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
